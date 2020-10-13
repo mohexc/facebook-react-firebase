@@ -43,7 +43,7 @@ const Sidebar = () => {
     return (
         <div className="">
             <SidebarRow src={user.photoURL} title={user.displayName} />
-            {sidebarRows.map(sidebarRow => <SidebarRow title={sidebarRow.title} icon={sidebarRow.icon} />)}
+            {sidebarRows.map((sidebarRow, index) => <SidebarRow key={`sidebarRow${index}`} title={sidebarRow.title} icon={sidebarRow.icon} />)}
         </div>
     )
 }

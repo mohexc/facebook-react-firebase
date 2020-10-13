@@ -1,4 +1,4 @@
-import { Avatar, Button } from 'antd';
+import { Avatar, Button, Popover } from 'antd';
 import React from 'react'
 import { MdSearch, MdHome, MdFlag, MdSubscriptions, MdStoreMallDirectory, MdAccountCircle, MdAdd, MdForum, MdNotificationsActive, MdExpandMore } from "react-icons/md";
 import { useAuthContext } from '../context/AuthContext';
@@ -8,7 +8,7 @@ const size = "large"
 
 // main
 const Header = () => {
-    const { user } = useAuthContext()
+    const { user, logOut } = useAuthContext()
     return (
         <div className="header">
             <div className="header-left">
@@ -46,7 +46,9 @@ const Header = () => {
                 <Button className="flex-center-center ml050" shape="circle" size={size} ><MdAdd /></Button>
                 <Button className="flex-center-center ml050" shape="circle" size={size} ><MdForum /></Button>
                 <Button className="flex-center-center ml050" shape="circle" size={size} > <MdNotificationsActive /></Button>
-                <Button className="flex-center-center ml050" shape="circle" size={size} ><MdExpandMore /></Button>
+                <Popover content={<p style={{ cursor: "pointer" }} onClick={() => logOut()}>Logout</p>}>
+                    <Button className="flex-center-center ml050" shape="circle" size={size} ><MdExpandMore /></Button>
+                </Popover>
             </div>
 
         </div>

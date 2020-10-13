@@ -18,7 +18,7 @@ const Post = ({ profilePic, image, username, timestamp, message }) => {
                 <p>{message}</p>
             </div>
             <div className="post-image">
-                <img src={image} alt="imagePost" />
+                {image && <img src={image} alt="imagePost" />}
             </div>
 
             <div className="post-options">

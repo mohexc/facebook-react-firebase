@@ -38,7 +38,7 @@ const storys = [
 const StoryReel = () => {
     return (
         <div className="storyReel" >
-            {storys.map(story => <Story image={story.image} profileSrc={story.profileSrc} title={story.title} />)}
+            {storys.map(story => <Story key={`${story.image}`} image={story.image} profileSrc={story.profileSrc} title={story.title} />)}
         </div>
     )
 }

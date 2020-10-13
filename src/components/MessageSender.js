@@ -1,6 +1,7 @@
-import { Avatar } from 'antd'
+import { Avatar, message } from 'antd'
 import React, { useState } from 'react'
 import { MdVideocam, MdPhotoLibrary, MdInsertEmoticon } from "react-icons/md";
+import { db, timestamp } from '../configs/firebase';
 import { useAuthContext } from '../context/AuthContext';
 import "./MessageSender.less"
 
@@ -12,6 +13,13 @@ const MessageSender = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        db.collection('posts').add({
+            message: input,
+            timestamp: timestamp(),
+            profilePic: user.photoURL,
+            username: user.displayName,
+            image: imageUrl
+        }).then(res => message.info(`saved success`)).catch(e => message.error(e.message))
         setInput("")
         setImageUrl("")
     }
