@@ -6,32 +6,27 @@ const storys = [
     {
         image: "https://source.unsplash.com/random/900x9001",
         profileSrc: "https://source.unsplash.com/random/900x900",
-        title: "Sony Sangha"
+        title: "Jump CEO"
     },
     {
         image: "https://source.unsplash.com/random/900x9002",
         profileSrc: "https://source.unsplash.com/random/900x810",
-        title: "Rafeh Qazi"
+        title: "Touch CTO"
     },
     {
         image: "https://source.unsplash.com/random/900x9003",
         profileSrc: "https://source.unsplash.com/random/900x802",
-        title: "Frankie"
+        title: "Dear COO"
     },
     {
         image: "https://source.unsplash.com/random/900x9004",
         profileSrc: "https://source.unsplash.com/random/900x803",
-        title: "Aaron Bernath"
+        title: "Matong Senior Developer"
     },
     {
         image: "https://source.unsplash.com/random/900x9005",
         profileSrc: "https://source.unsplash.com/random/900x804",
-        title: "Naz"
-    },
-    {
-        image: "https://source.unsplash.com/random/900x9006",
-        profileSrc: "https://source.unsplash.com/random/900x805",
-        title: "Matong"
+        title: "Hon Hon Junier Developer"
     },
 ]
 
