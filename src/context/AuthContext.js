@@ -1,14 +1,29 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 
 const Context = React.createContext()
 
 const AuthContext = ({ children }) => {
-    const [user, setUser] = useState()
+    const [user, setUser] = useState(JSON.parse((localStorage.getItem("user"))))
+
+    useEffect(() => {
+
+    }, [user])
+
+    const logIn = (user) => {
+        setUser(user)
+        localStorage.setItem("user", JSON.stringify(user));
+    }
+
+    const logOut = () => {
+        setUser()
+        localStorage.removeItem("user")
+    }
 
     return (<Context.Provider
         value={{
             user,
-            setUser
+            logIn,
+            logOut
         }}>
         {children}
     </Context.Provider>

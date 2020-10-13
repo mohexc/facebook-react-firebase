@@ -6,13 +6,14 @@ import { useAuthContext } from '../context/AuthContext'
 import './Login.less'
 // main
 const Login = () => {
-    const { setUser } = useAuthContext()
+    const { logIn } = useAuthContext()
 
     const sigin = () => {
         auth
             .signInWithPopup(provider)
             .then((result) => {
-                setUser(result.user)
+
+                logIn(result.user)
             })
             .catch((e) => message.error(e.message))
     }

@@ -11,7 +11,6 @@ import { useAuthContext } from './context/AuthContext'
 const App = () => {
   const { user } = useAuthContext()
 
-
   return (!user
     ? <Login />
     : (

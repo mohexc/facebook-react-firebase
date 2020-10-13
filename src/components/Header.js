@@ -1,12 +1,14 @@
 import { Avatar, Button } from 'antd';
 import React from 'react'
 import { MdSearch, MdHome, MdFlag, MdSubscriptions, MdStoreMallDirectory, MdAccountCircle, MdAdd, MdForum, MdNotificationsActive, MdExpandMore } from "react-icons/md";
+import { useAuthContext } from '../context/AuthContext';
 import "./Header.less"
 
 const size = "large"
 
 // main
 const Header = () => {
+    const { user } = useAuthContext()
     return (
         <div className="header">
             <div className="header-left">
@@ -37,8 +39,8 @@ const Header = () => {
 
             <div className="header-right ">
                 <div className="header-info">
-                    <Avatar size="large" />
-                    <h4>Qzitdsaf</h4>
+                    <Avatar src={user.photoURL} size="large" />
+                    <h4>{user.displayName}</h4>
                 </div>
 
                 <Button className="flex-center-center ml050" shape="circle" size={size} ><MdAdd /></Button>

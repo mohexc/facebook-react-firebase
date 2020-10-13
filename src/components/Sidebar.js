@@ -2,6 +2,7 @@ import React from 'react'
 import SidebarRow from './SidebarRow'
 import "./Sidebar.less"
 import { MdLocalHospital, MdFlag, MdPeople, MdChat, MdStore, MdVideoLibrary, MdExpandMore } from "react-icons/md";
+import { useAuthContext } from '../context/AuthContext';
 
 const sidebarRows = [
     {
@@ -37,10 +38,11 @@ const sidebarRows = [
 // main
 const Sidebar = () => {
 
+    const { user } = useAuthContext()
 
     return (
         <div className="">
-            <SidebarRow src="https://source.unsplash.com/random/800x600" title="Sonny sangha" />
+            <SidebarRow src={user.photoURL} title={user.displayName} />
             {sidebarRows.map(sidebarRow => <SidebarRow title={sidebarRow.title} icon={sidebarRow.icon} />)}
         </div>
     )

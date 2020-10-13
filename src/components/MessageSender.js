@@ -1,29 +1,30 @@
 import { Avatar } from 'antd'
 import React, { useState } from 'react'
-import { MdVideocam, MdPhotoLibrary, MdInsertEmoticon, MdPeople } from "react-icons/md";
+import { MdVideocam, MdPhotoLibrary, MdInsertEmoticon } from "react-icons/md";
+import { useAuthContext } from '../context/AuthContext';
 import "./MessageSender.less"
 
 // main
 const MessageSender = () => {
     const [input, setInput] = useState('')
     const [imageUrl, setImageUrl] = useState('')
+    const { user } = useAuthContext()
     const handleSubmit = (e) => {
         e.preventDefault()
-
         setInput("")
         setImageUrl("")
-        debugger
+
     }
     return (
         <div className="messageSender">
             <div className="messageSender-top">
-                <Avatar size="large" icon={<MdPeople style={{ marginTop: '5px' }} size={30} />} />
+                <Avatar size="large" src={user.photoURL} size={30} />
                 <form >
                     <input
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         type="text"
-                        placeholder="what's on your mind ?"
+                        placeholder={`What's on your mind ? ${user.displayName}`}
                         className="messageSender-input"
                     />
                     <input
