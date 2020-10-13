@@ -9,16 +9,16 @@ const MessageSender = () => {
     const [input, setInput] = useState('')
     const [imageUrl, setImageUrl] = useState('')
     const { user } = useAuthContext()
+
     const handleSubmit = (e) => {
         e.preventDefault()
         setInput("")
         setImageUrl("")
-
     }
     return (
         <div className="messageSender">
             <div className="messageSender-top">
-                <Avatar size="large" src={user.photoURL} size={30} />
+                <Avatar size="large" src={user.photoURL} />
                 <form >
                     <input
                         value={input}
