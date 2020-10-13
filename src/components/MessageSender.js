@@ -1,6 +1,6 @@
 import { Avatar } from 'antd'
 import React, { useState } from 'react'
-import { MdVideocam, MdPhotoLibrary, MdInsertEmoticon } from "react-icons/md";
+import { MdVideocam, MdPhotoLibrary, MdInsertEmoticon, MdPeople } from "react-icons/md";
 import "./MessageSender.less"
 
 // main
@@ -17,7 +17,7 @@ const MessageSender = () => {
     return (
         <div className="messageSender">
             <div className="messageSender-top">
-                <Avatar />
+                <Avatar size="large" icon={<MdPeople style={{ marginTop: '5px' }} size={30} />} />
                 <form >
                     <input
                         value={input}

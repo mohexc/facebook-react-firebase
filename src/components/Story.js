@@ -4,7 +4,7 @@ import "./Story.less"
 const Story = ({ image, profileSrc, title }) => {
     return (
         <div className="story" style={{ backgroundImage: `url(${image})` }}>
-            <Avatar size="large" className="story-avatar" src={profileSrc} />
+            <Avatar size="large" style={{ margin: "0.4rem" }} className="story-avatar" src={profileSrc} />
             <h4>{title}</h4>
         </div>
     )

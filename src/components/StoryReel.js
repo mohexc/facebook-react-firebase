@@ -21,12 +21,17 @@ const storys = [
     {
         image: "https://source.unsplash.com/random/900x9004",
         profileSrc: "https://source.unsplash.com/random/900x803",
-        title: "Matong Senior Developer"
+        title: "Matong \n Senior Developer"
     },
     {
         image: "https://source.unsplash.com/random/900x9005",
         profileSrc: "https://source.unsplash.com/random/900x804",
-        title: "Hon Hon Junier Developer"
+        title: "Hon Hon \n Junier Developer"
+    },
+    {
+        image: "https://source.unsplash.com/random/700x9005",
+        profileSrc: "https://source.unsplash.com/random/780x804",
+        title: "4Four \n Qulity Tester"
     },
 ]
 
