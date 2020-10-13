@@ -1,11 +1,13 @@
 import React from 'react'
+import Header from "./components/Header"
 import "./App.less"
+
 
 const App = () => {
   return (
-    <h1>
-      Hi {'🚀'}
-    </h1>
+    <div>
+      <Header />
+    </div>
   )
 }
 
